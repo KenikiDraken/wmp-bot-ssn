@@ -45,7 +45,7 @@ function analyserMessage($message) {
 }
 
 function sendTextMessage($numero, $message) {
-    $url = "https://waplatform.qwiper.com/api/a32dfa9e-0d4c-4121-ba33-73d5841eb4c2/contact/send-message";
+    $url = "https://waplatform.qwiper.com/api/21ea6f64-4058-467d-97ee-b72bab0849f5/contact/send-message";
 
     $curl = curl_init($url);
     curl_setopt($curl, CURLOPT_URL, $url);
@@ -53,7 +53,7 @@ function sendTextMessage($numero, $message) {
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     
     $headers = array(
-       "Authorization: Bearer FXe3aruVoTnfwJxrVDuw9yTzUsTyH2wNBKxOZhR5AZQn2JJzsYtWQset347L00aA",
+       "Authorization: Bearer 8uy6SaQC8DWGIdSHC9HWox1MfU3CaHJ3gN8Dl63c81YFo0QAdQgsis22vRGOzxZ8",
        "Content-Type: application/json",
     );
     curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
@@ -91,7 +91,7 @@ function authenticateRequest() {
         exit;
     }
 
-    $validApiKey = '8uy6SaQC8DWGIdSHC9HWox1MfU3CaHJ3gN8Dl63c81YFo0QAdQgsis22vRGOzxZ8'; // À générer et sécuriser dans un fichier d’environnement
+    $validApiKey = '21ea6f64-4058-467d-97ee-b72bab0849f5'; // À générer et sécuriser dans un fichier d’environnement
 
     if ($token != $validApiKey) {
         http_response_code(401);
@@ -239,6 +239,7 @@ function updateSessionStep($sessionId, $step) {
     $stmt = $db->prepare("UPDATE sessions SET current_step = ?, last_interaction = NOW() WHERE id = ?");
     $stmt->execute([$step, $sessionId]);
 }
+
 
 function getSessionStep($sessionToken) {
     $db = getDBConnection();

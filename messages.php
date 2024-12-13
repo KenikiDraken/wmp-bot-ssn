@@ -1,5 +1,4 @@
 <?php
-
 $welcomeMessages = [
     "Bonjour ! 🌟 Merci d’avoir contacté la Société Sahel Négoce. En quoi pouvons-nous vous aider aujourd'hui ? 🤔\n",
     "Salut ! 👋 Bienvenue chez Sahel Négoce. Que puis-je faire pour vous aujourd’hui ? 😊\n",
