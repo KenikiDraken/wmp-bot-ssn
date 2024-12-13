@@ -1,6 +1,6 @@
 <?php
 require 'includes.php';
-require 'messages.php';
+require 'IA_messages.php';
 
 // Auth
 authenticateRequest();
@@ -16,7 +16,7 @@ if (!empty($contenuRecu)) {
     $userMessage = $result['body'] ?? null; // Message envoyé par l'utilisateur
 
     // Petite limitation de nombre d'utilisateur au chatbot
-    if ($phoneNumber != "22797927042" && $phoneNumber != "22789323500" && $phoneNumber != "22790901212") {
+    if ($phoneNumber != "22797927042" && $phoneNumber != "22789323500") {
         http_response_code(401);
         echo json_encode(['status' => 'error', 'message' => 'Vous ne faites pas partis de la bêta.']);
         exit;
